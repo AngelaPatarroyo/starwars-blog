@@ -3,7 +3,7 @@ import "../../styles/home.css";
 import { Card } from "../component/Card"
 
 export const Home = () => (
-	<div className="overFlow-x">
+	<div>
 		<h4 className="m-5" style={{color: "red"}}>Characters</h4>
 	<div  className="text-center d-flex m-5 p-3">
 		
@@ -27,3 +27,8 @@ export const Home = () => (
 	</div>
 	</div>
 );
+
+
+
+
+
