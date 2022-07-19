@@ -21,7 +21,7 @@ export const Home = () => {
                     key={element?.uid}
                     uid={element?.uid}
                     title={element?.name}
-                    gender={"Male"}
+                    
                     indice={i}
                     url={store.imgPeople[i].url}
                   ></Card>

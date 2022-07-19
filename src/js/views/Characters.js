@@ -17,10 +17,10 @@ const Characters = () => {
             className="align-items-center"
             height={350}
             width={450}
-            src={store.imgPeople[params?.theid - 1].url}
+            src={store.imgPeople[params?.theid-1].url}
           />
           <div className="m-5">
-            <h1 className="text-center mb-5">{store?.peopleLearnMore?.name}</h1>
+            <h1 className="text-center mb-5">{store.peopleLearnMore?.name}</h1>
             <p className=" text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce leo
               augue, tristique id nisl ut, consequat luctus felis. Nunc egestas,
@@ -40,12 +40,12 @@ const Characters = () => {
         </div>
 
         <div className="d-flex">
-          <p className="m-3">Heigth:</p>
-          <p className="m-3">Mass:</p>
-          <p className="m-3">Skin Color:</p>
-          <p className="m-3">Eye Color:</p>
-          <p className="m-3">Birth Year:</p>
-          <p className="m-3">Gender:</p>
+          <p className="m-3">Heigth:{store.peopleLearnMore?.height}</p>
+          <p className="m-3">Mass:{store.peopleLearnMore?.mass}</p>
+          <p className="m-3">Skin Color:{store.peopleLearnMore?.skin_color}</p>
+          <p className="m-3">Eye Color: {store.peopleLearnMore?.hair_color}</p>
+          <p className="m-3">Birth Year: {store.peopleLearnMore?.birth_year}</p>
+          <p className="m-3">Gender:{store.peopleLearnMore?.gender}</p>
         </div>
       </div>
     </div>

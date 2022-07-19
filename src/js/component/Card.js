@@ -8,7 +8,7 @@ export const Card = (props) => {
       <div className="card-body">
         <h5 className="card-title">{props.title}</h5>
         <p className="card-text">El mejor personaje de la historia</p>
-        <p className="card-text">Gender:</p>
+        <p className="card-text">Gender: </p>
 
         {props.planetInformation && (
           <p>Terrain: {props.planetInformation.terrain}</p>

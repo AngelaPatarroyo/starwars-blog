@@ -96,12 +96,18 @@ const getState = ({ getStore, getActions, setStore }) => {
       getPeople: async (uid) => {
         fetch(`https://www.swapi.tech/api/people/${uid}`)
           .then((resp) => resp.json())
-          .then((data) => setStore({ peopleLearnMore: data.results }));
+          .then((data) =>
+            setStore({ peopleLearnMore: data.result.properties })
+          );
+        console.log();
+        data;
       },
       getPlanets: async (uid) => {
         fetch(`https://www.swapi.tech/api/planets/${uid}`)
           .then((resp) => resp.json())
-          .then((data) => setStore({ planetsLearnMore: data.results }));
+          .then((data) =>
+            setStore({ planetsLearnMore: data.result.properties })
+          );
       },
 
       changeColor: (index, color) => {
