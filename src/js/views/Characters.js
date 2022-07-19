@@ -1,62 +1,54 @@
-import React from "react";
-
+import React, { useContext, useEffect } from "react";
+import { Context } from "../store/appContext";
+import { useParams } from "react-router-dom";
 
 const Characters = () => {
+  const { store, actions } = useContext(Context);
+  const params = useParams();
+  useEffect(() => {
+    params?.theid && actions.getPeople(params.theid);
+  }, [params?.theid]);
+  console.log(store?.peopleLearnMore);
   return (
-    <div clasName="container mt-4 bg-primary">
-      <div clasName="d-flex flex-row">
-        <div clasName="col-6">
-          <img
-            src="https://imgflip.com/s/meme/Futurama-Fry.jpg"
-            heigth="500"
-            width="500"
-          />
-        </div>
-        <div clasName="col-6">
-          <h2>Martin Coimbra</h2>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
-        </div>
-      </div>
+    <div clasName="container" style={{ height: "700px", width: "1400px" }}>
       <div>
-        <hr />
-        <div>
-          <div>
-            <p>Name</p>
-            <p></p>
+        <div className="d-flex m-5">
+          <img
+            className="align-items-center"
+            height={350}
+            width={450}
+            src={store.imgPeople[params?.theid - 1].url}
+          />
+          <div className="m-5">
+            <h1 className="text-center mb-5">{store?.peopleLearnMore?.name}</h1>
+            <p className=" text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce leo
+              augue, tristique id nisl ut, consequat luctus felis. Nunc egestas,
+              lacus eu pharetra eleifend, ante felis tempus mi, vel tempus felis
+              nulla facilisis lorem. In hac habitasse platea dictumst. Aenean
+              ornare semper magna sit amet volutpat. Vivamus odio enim, faucibus
+              a turpis venenatis, vestibulum dictum ex. Nulla sed porttitor
+              ipsum, quis lobortis libero. Suspendisse iaculis eleifend ante, in
+              scelerisque nibh ornare a. Vestibulum id erat augue. Aliquam vel
+              fringilla lorem, sed rutrum ex. Donec in tortor venenatis lacus
+              cursus faucibus. Aenean ut consectetur diam. Etiam rhoncus
+              tincidunt sagittis. Duis dapibus rhoncus imperdiet. Nulla quis
+              tincidunt ipsum. Ut at leo sollicitudin, mattis elit id, lobortis
+              ex.
+            </p>
           </div>
-          <div>
-            <p>Birth Year</p>
-            <p></p>
-          </div>
-          <div>
-            <p>Gender</p>
-            <p></p>
-          </div>
-          <div>
-            <p>Heigth</p>
-            <p></p>
-          </div>
-          <div>
-            <p>Skin Color</p>
-            <p></p>
-          </div>
-          <div>
-            <p clasName="btn btn-primary">Eye Color</p>
-            <p></p>
-          </div>
+        </div>
+
+        <div className="d-flex">
+          <p className="m-3">Heigth:</p>
+          <p className="m-3">Mass:</p>
+          <p className="m-3">Skin Color:</p>
+          <p className="m-3">Eye Color:</p>
+          <p className="m-3">Birth Year:</p>
+          <p className="m-3">Gender:</p>
         </div>
       </div>
     </div>
   );
 };
-export {Characters}
+export { Characters };
