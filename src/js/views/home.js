@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
-import { Card } from "../component/Card";
+import { Card } from "../component/card";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -21,13 +21,13 @@ export const Home = () => {
                     key={element?.uid}
                     uid={element?.uid}
                     title={element?.name}
-                    
                     indice={i}
                     url={store.imgPeople[i].url}
                   ></Card>
                 </div>
               );
             })}
+
           </>
         ) : (
           "loading..."
@@ -36,21 +36,29 @@ export const Home = () => {
       <h4 className="m-5" style={{ color: "red" }}>
         Planets
       </h4>
-      <div className="text-center d-flex m-5 p-3 overflow-scroll">
+      <div className="text-center d-flex m-5 p-3 overflow-scroll"/>
+     
         <>
-          {store?.planets.map((element, i)=>{
-            return (<Card type="planets"
-            key={element?.uid}
-            uid={element?.uid}
-            title={element?.name}
-            
-            indice={i}
-            url={store.imgPlanets[i].url}
-          ></Card>)
+          {store?.planets.map((element, i) => {
+            return (
+              <div>
+                <Card type="planets"
+                  key={element?.uid}
+                  uid={element?.uid}
+                  title={element?.name}
+
+                  indice={i}
+                  url={store?.imgPlanets[i].url}
+                ></Card>
+              </div>
+            )
           })}
-        </>
-        </div>
-      </div>
-    
+          </>
+        
+      
+    </div>
+
+      
+
   );
 };

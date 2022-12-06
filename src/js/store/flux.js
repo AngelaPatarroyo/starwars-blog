@@ -79,6 +79,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       ],
       peopleLearnMore: [],
       planetsLeranMore: [],
+      peopleDescription:[],
     },
     actions: {
       // Use getActions to call a function within a fuction
@@ -98,7 +99,13 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((resp) => resp.json())
           .then((data) =>
             setStore({ peopleLearnMore: data.result.properties })
+            
           );
+         
+        
+          
+
+
         console.log();
         data;
       },
