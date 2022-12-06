@@ -25,6 +25,7 @@ export const Home = () => {
                     url={store.imgPeople[i].url}
                   ></Card>
                 </div>
+                
               );
             })}
 
