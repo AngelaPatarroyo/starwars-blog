@@ -27,7 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           url: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2016/08/r2-d2.jpg",
         },
         {
-          url: "https://i0.wp.com/hipertextual.com/wp-content/uploads/2020/01/hipertextual-star-wars-deseo-mas-grande-darth-vader-podria-hacerse-realidad-muy-pronto-2020659163.jpg?,fit=2048%2C1365&ssl=1",
+          url: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2020/01/hipertextual-star-wars-deseo-mas-grande-darth-vader-podria-hacerse-realidad-muy-pronto-2020659163.jpg?fit=2048%2C1365&quality=50&strip=all&ssl=1",
         },
         { url: "https://wallpapercave.com/wp/wp3210147.jpg" },
         {

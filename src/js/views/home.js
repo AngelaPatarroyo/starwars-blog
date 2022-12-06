@@ -12,7 +12,7 @@ export const Home = () => {
         Characters
       </h4>
       <div className="text-center d-flex m-5 p-3 overflow-scroll">
-        {store?.people.length ? (
+        {store?.planets.length ? (
           <>
             {store?.people.map((element, i) => {
               return (
@@ -36,29 +36,29 @@ export const Home = () => {
       <h4 className="m-5" style={{ color: "red" }}>
         Planets
       </h4>
-      <div className="text-center d-flex m-5 p-3 overflow-scroll"/>
+      <div className="text-center d-flex m-5 p-3 overflow-scroll">
      
-        <>
-          {store?.planets.map((element, i) => {
-            return (
-              <div>
-                <Card type="planets"
-                  key={element?.uid}
-                  uid={element?.uid}
-                  title={element?.name}
+      {store?.planets.length ? (
+          <>
+            {store?.planets.map((element, i) => {
+              return (
+                <div>
+                  <Card type="planets"
+                    key={element?.uid}
+                    uid={element?.uid}
+                    title={element?.name}
+                    indice={i}
+                    url={store.imgPlanets[i].url}
+                  ></Card>
+                </div>
+              );
+            })}
 
-                  indice={i}
-                  url={store?.imgPlanets[i].url}
-                ></Card>
-              </div>
-            )
-          })}
           </>
-        
-      
-    </div>
-
-      
-
+        ) : (
+          "loading..."
+        )}
+          </div>
+          </div>
   );
 };
