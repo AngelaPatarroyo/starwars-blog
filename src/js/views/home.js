@@ -36,11 +36,21 @@ export const Home = () => {
       <h4 className="m-5" style={{ color: "red" }}>
         Planets
       </h4>
-      <div className="text-center d-flex m-5 p-3">
-        <div>
-          <Card title="Character" planetInformation={{ terrain: 200 }} />
+      <div className="text-center d-flex m-5 p-3 overflow-scroll">
+        <>
+          {store?.planets.map((element, i)=>{
+            return (<Card type="planets"
+            key={element?.uid}
+            uid={element?.uid}
+            title={element?.name}
+            
+            indice={i}
+            url={store.imgPlanets[i].url}
+          ></Card>)
+          })}
+        </>
         </div>
       </div>
-    </div>
+    
   );
 };
