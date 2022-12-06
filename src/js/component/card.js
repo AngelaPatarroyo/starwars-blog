@@ -7,7 +7,7 @@ export const Card = (props) => {
       <img className="card-img-top justify-content-center" style={{ width: "400px", height: "300px" }} src={props.url} alt="" />
       <div className="card-body">
         <h4 className="card-title">{props.title}</h4>
-        <p>{props.eye_color}</p>
+   
         
         <Link to={props.type === "people" ? `/characters/${props.uid}`:  `/planets/${props.uid}`} className="btn btn-primary">
           Learn More
